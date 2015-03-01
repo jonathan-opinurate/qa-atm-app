@@ -74,12 +74,19 @@ Firstly, to build the application and package it with its dependencies, you shou
 mvn assembly:single
 ```
 
-To run the application with the SQLite driver, you should execute it with the following arguments:
+You will need to seed the SQLite database if it with the SQLite driver by executing the following command:
 ```
-java --jar target/atm-app-*.jar --sqlite <path-to-config>
-``
+java -jar target/atm-app-*.jar garyttierney.atmapp.tools.CreateSQLiteDatabaseTool <path-to-config>
+```
 
 Where path-to-config is a java properties file containing a dsn for the sqlite database, e.g.,
 ```
 dsn=jdbc:sqlite:database.sqlite
 ```
+
+*Note: if the database file doesn't exist it will be automatically created*
+
+To run the application with the SQLite driver, you should execute it with the following arguments:
+```
+java --jar target/atm-app-*.jar --sqlite <path-to-config>
+``

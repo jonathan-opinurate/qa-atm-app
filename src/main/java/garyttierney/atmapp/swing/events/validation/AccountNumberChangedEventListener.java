@@ -24,8 +24,8 @@ public class AccountNumberChangedEventListener implements PropertyChangeListener
         }
 
         // then check if it's the correct length
-        if (value.length() != 8) {
-            accountNumberLabel.setText("The account number must be 8 digits. E.g., 00010012");
+        if (value.length() != 6) {
+            accountNumberLabel.setText("The account number must be 6 digits. E.g., 000100");
             accountNumberLabel.setForeground(Color.RED);
             return;
         }
