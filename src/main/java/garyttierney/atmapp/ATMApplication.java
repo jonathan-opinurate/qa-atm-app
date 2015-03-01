@@ -2,6 +2,9 @@ package garyttierney.atmapp;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
+import garyttierney.atmapp.database.CustomerRepository;
+import garyttierney.atmapp.database.CustomerRepositoryException;
+import garyttierney.atmapp.model.Customer;
 import garyttierney.atmapp.module.InMemoryDatabaseModule;
 import garyttierney.atmapp.module.sqlite.SQLiteDatabaseModule;
 import garyttierney.atmapp.swing.view.CustomerValidationView;
@@ -12,9 +15,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+/**
+ * Entry point for the ATMApplication, instantiates the required modules and boots up the validation view.
+ */
 public class ATMApplication {
-
-
     public static void main(String[] argv) {
         if (argv.length < 2) {
             System.err.println("Usage: java garyttierney.atmapp.ATMApplication [options] <configuration-file>");
@@ -45,6 +49,16 @@ public class ATMApplication {
         }
 
         ATMApplicationContext ctx = new ATMApplicationContext(injector);
+        CustomerRepository customerRepository = ctx.getService(CustomerRepository.class);
+        try {
+            for(Customer customer : customerRepository.listCustomers()) {
+                customer.setWithdrawalLimit(250);
+                customerRepository.updateCustomer(customer);
+            }
+        } catch (CustomerRepositoryException e) {
+            throw new RuntimeException("Encountered error when trying to reset daily withdrawal limits!", e);
+        }
+
         ctx.switchTo(new CustomerValidationView(ctx));
     }
 }
