@@ -44,6 +44,11 @@ public class Customer {
      * The customers address.
      */
     private String address;
+
+    /**
+     * If this customer is blacklisted or not.
+     * @deprecated
+     */
     private boolean blacklisted;
 
     /**
@@ -190,10 +195,22 @@ public class Customer {
         this.address = address;
     }
 
+    /**
+     * Checks if this user is blacklisted from the ATM.
+     *
+     * @return if this customer is blacklisted or not.
+     * @deprecated thought this was a design requirement.
+     */
     public boolean isBlacklisted() {
         return blacklisted;
     }
 
+    /**
+     * Sets if this user is blacklisted from the ATM.
+     *
+     * @param blacklisted if this customer is blacklisted or not.
+     * @deprecated thought this was a design requirement.
+     */
     public void setBlacklisted(boolean blacklisted) {
         this.blacklisted = blacklisted;
     }
