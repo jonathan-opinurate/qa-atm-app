@@ -9,11 +9,22 @@ import garyttierney.atmapp.swing.view.CustomerWithdrawalResultView;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 
+/**
+ * This action represents a customers withdrawal request and encapsulates the logic of the {@link garyttierney.atmapp.service.CustomerWithdrawalService}
+ * for the swing application.
+ */
 public class CustomerWithdrawalAction extends AbstractAction {
     private final ATMApplicationContext context;
     private final CustomerWithdrawalModel model;
     private final CustomerWithdrawalService customerWithdrawalService;
 
+    /**
+     * Create this action and set it up with the specified model and withdrawal service.
+     *
+     * @param context The application context used to switch to the withdrawal result view.
+     * @param model The withdrawal model we're operating on.
+     * @param customerWithdrawalService The withdrawal service which handles the withdrawal request.
+     */
     public CustomerWithdrawalAction(
         ATMApplicationContext context,
         CustomerWithdrawalModel model,

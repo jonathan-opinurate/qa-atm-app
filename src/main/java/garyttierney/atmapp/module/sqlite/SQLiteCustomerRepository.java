@@ -50,7 +50,7 @@ public class SQLiteCustomerRepository implements CustomerRepository {
             "SELECT c.* FROM customer c WHERE c.account_number = ? AND c.pin_number = ?"
         );
         this.updateStatement = connection.prepareStatement(
-            "UPDATE customer SET balance = ?, withdrawal_limit = ? WHERE account_number = ? AND pin_number = ?"
+            "UPDATE customer SET balance = ?, withdrawal_limit = ?, blacklisted = ? WHERE account_number = ? AND pin_number = ?"
         );
 
         this.listStatement = connection.prepareStatement("SELECT c.* FROM customer c");
@@ -61,8 +61,9 @@ public class SQLiteCustomerRepository implements CustomerRepository {
         try {
             updateStatement.setDouble(1, customer.getBalance());
             updateStatement.setInt(2, customer.getWithdrawalLimit());
-            updateStatement.setString(3, customer.getAccountNumber());
-            updateStatement.setString(4, customer.getPinNumber());
+            updateStatement.setBoolean(3, customer.isBlacklisted());
+            updateStatement.setString(4, customer.getAccountNumber());
+            updateStatement.setString(5, customer.getPinNumber());
 
             updateStatement.executeUpdate();
         } catch (SQLException ex) {

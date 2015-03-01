@@ -4,6 +4,7 @@ import garyttierney.atmapp.ATMApplicationContext;
 import garyttierney.atmapp.service.CustomerAuthenticationService;
 import garyttierney.atmapp.swing.action.CustomerAuthenticationAction;
 import garyttierney.atmapp.swing.events.validation.AccountNumberChangedEventListener;
+import garyttierney.atmapp.swing.events.validation.FailedAuthenticationEventListener;
 import garyttierney.atmapp.swing.events.validation.PinNumberChangedEventListener;
 import garyttierney.atmapp.swing.model.CustomerValidationModel;
 import garyttierney.atmapp.swing.util.DocumentListenerAdapter;
@@ -22,13 +23,12 @@ public class CustomerValidationView extends AbstractView {
 
     @Override
     public JPanel createViewJPanel() {
-
         JLabel accountNumberLabel = new JLabel("Please enter your 8 digit account number here");
         JLabel pinNumberLabel = new JLabel("Please enter your 4 digit pin number here");
 
         model.addPropertyChangeListener("accountNumber", new AccountNumberChangedEventListener(accountNumberLabel));
         model.addPropertyChangeListener("pinNumber", new PinNumberChangedEventListener(pinNumberLabel));
-
+        model.addPropertyChangeListener("numberOfAttempts", new FailedAuthenticationEventListener(context, 3));
         JPasswordField accountNumberField = new JPasswordField(8);
         JPasswordField pinNumberField = new JPasswordField(4);
 

@@ -7,7 +7,7 @@ import java.util.Set;
 
 public interface CustomerRepository {
     /**
-     * Update a customers withdrawalLimit and balance in the database.
+     * Update a customers withdrawalLimit, balance and blacklist flag in the database.
      *
      * @param customer The customer to update.
      * @throws CustomerRepositoryException If an error occurred while executing the update.

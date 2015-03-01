@@ -44,6 +44,7 @@ public class Customer {
      * The customers address.
      */
     private String address;
+    private boolean blacklisted;
 
     /**
      * Gets the account number.
@@ -187,5 +188,13 @@ public class Customer {
      */
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public boolean isBlacklisted() {
+        return blacklisted;
+    }
+
+    public void setBlacklisted(boolean blacklisted) {
+        this.blacklisted = blacklisted;
     }
 }

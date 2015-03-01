@@ -22,11 +22,14 @@ public class ATMApplicationContext {
 
     public void switchTo(AbstractView view) {
         frame.setVisible(false);
+        frame.dispose();
+
         frame = new JFrame("ATM");
         JPanel panel = view.createViewJPanel();
         frame.add(panel);
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+        frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
     }
 }

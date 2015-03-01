@@ -19,6 +19,14 @@ public class CustomerAuthenticationAction extends AbstractAction {
     private final CustomerAuthenticationService customerAuthenticationService;
     private final JLabel submitResultLabel;
 
+    /**
+     * Create a new action which handles a user submitting an account and pin number.
+     *
+     * @param context The application context used for switching to the {@link garyttierney.atmapp.swing.view.CustomerOptionsView}.
+     * @param options The customer validation model we're operating on.
+     * @param customerAuthenticationService The authentication server which is responsible for actually authenticating the user input.
+     * @param submitResultLabel The label to update with customer authentication attempts.
+     */
     public CustomerAuthenticationAction(
         ATMApplicationContext context,
         CustomerValidationModel options,
