@@ -17,6 +17,7 @@ public class FailedAuthenticationEventListener implements PropertyChangeListener
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
+        System.out.println("Handle property change.");
         int numAttempts = (Integer) evt.getNewValue();
 
         // exceeded max number of attempts, lock out and "swallow" card.

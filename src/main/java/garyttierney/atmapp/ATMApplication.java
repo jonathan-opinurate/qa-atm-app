@@ -5,7 +5,7 @@ import com.google.inject.Injector;
 import garyttierney.atmapp.database.CustomerRepository;
 import garyttierney.atmapp.database.CustomerRepositoryException;
 import garyttierney.atmapp.model.Customer;
-import garyttierney.atmapp.module.InMemoryDatabaseModule;
+import garyttierney.atmapp.module.memory.InMemoryDatabaseModule;
 import garyttierney.atmapp.module.sqlite.SQLiteDatabaseModule;
 import garyttierney.atmapp.swing.view.CustomerValidationView;
 

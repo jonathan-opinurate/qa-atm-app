@@ -1,5 +1,10 @@
 # DEVELOPMENT GUIDE
 
+## Requirements
+
+JDK 8
+Maven >= 2
+
 ## General notes
 
 This application is setup in a way that allows you to easily override the default withdrawal and authentication mechanisms. A `Module` is able
@@ -66,6 +71,12 @@ option then we will attempt to print the receipt when the user presses the close
 ## Test suite
 
 There are also some unit tests located in the src/test/java folder, which test that the withdrawal and authentication functionality is working as expected.
+
+They can be invoked by running
+
+```
+mvn test
+```
 
 # Running the application
 
