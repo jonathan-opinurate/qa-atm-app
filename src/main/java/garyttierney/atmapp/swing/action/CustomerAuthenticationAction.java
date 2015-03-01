@@ -9,6 +9,7 @@ import garyttierney.atmapp.swing.view.CustomerOptionsView;
 import garyttierney.atmapp.swing.view.SuperuserView;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 
 public class CustomerAuthenticationAction extends AbstractAction {
@@ -31,12 +32,21 @@ public class CustomerAuthenticationAction extends AbstractAction {
         try {
             Customer customer = customerAuthenticationService.authenticate(options.getAccountNumber(), options.getPinNumber());
             if (customer.isSuperuser()) { // forward on to management view
-                context.switchTo(new SuperuserView(context));
-            } else { // forward on to customer view
-                context.switchTo(new CustomerOptionsView(context, customer));
+                Object[] options = {"Yes", "No - continue"};
+                int option = JOptionPane.showOptionDialog(null,  "Would you like to view the superuser dashboard?", "Welcome administrator!",
+                        JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[1]);
+
+                if (option == JOptionPane.YES_OPTION) {
+                    context.switchTo(new SuperuserView(context));
+                }
+
+                // else, continue as normal
             }
+
+            context.switchTo(new CustomerOptionsView(context, customer));
         } catch (CustomerAuthenticationException ex) {
             options.incrementNumberOfAttempts();
+            submitResultLabel.setForeground(Color.RED);
             submitResultLabel.setText(ex.getMessage());
         }
     }

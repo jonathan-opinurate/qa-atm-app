@@ -68,17 +68,17 @@ public class CustomerValidationView extends AbstractView {
         layout.setAutoCreateGaps(true);
         layout.setAutoCreateContainerGaps(true);
 
-        // @formatter: off
+        // @formatter:off
         layout.setVerticalGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                .addComponent(accountNumberLabel)
-                                .addComponent(accountNumberField))
-                        .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                .addComponent(pinNumberLabel)
-                                .addComponent(pinNumberField))
-                        .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                .addComponent(submitOptionsLabel)
-                                .addComponent(submitOptionsButton))
+                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                        .addComponent(accountNumberLabel)
+                        .addComponent(accountNumberField))
+                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                        .addComponent(pinNumberLabel)
+                        .addComponent(pinNumberField))
+                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                        .addComponent(submitOptionsLabel)
+                        .addComponent(submitOptionsButton))
         );
 
         layout.linkSize(SwingConstants.VERTICAL, accountNumberLabel, accountNumberField);
@@ -99,6 +99,7 @@ public class CustomerValidationView extends AbstractView {
         layout.linkSize(SwingConstants.HORIZONTAL, accountNumberLabel, pinNumberLabel, submitOptionsLabel);
         layout.linkSize(SwingConstants.HORIZONTAL, accountNumberField, pinNumberField, submitOptionsButton);
 
+        //@formatter:on
 
         return panel;
     }

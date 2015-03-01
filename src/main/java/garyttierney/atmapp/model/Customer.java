@@ -60,7 +60,7 @@ public class Customer {
         this.withdrawlLimit = withdrawlLimit;
     }
 
-    public int getWithdrawlLimit() {
+    public int getWithdrawalLimit() {
         return withdrawlLimit;
     }
 

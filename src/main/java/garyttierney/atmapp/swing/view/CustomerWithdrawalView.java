@@ -4,14 +4,13 @@ import garyttierney.atmapp.ATMApplicationContext;
 
 import javax.swing.*;
 
-public class SuperuserView extends AbstractView {
-
-    public SuperuserView(ATMApplicationContext context) {
+public class CustomerWithdrawalView extends AbstractView {
+    public CustomerWithdrawalView(ATMApplicationContext context) {
         super(context);
     }
 
     @Override
     public JPanel createViewJPanel() {
-        return new JPanel();
+        return null;
     }
 }

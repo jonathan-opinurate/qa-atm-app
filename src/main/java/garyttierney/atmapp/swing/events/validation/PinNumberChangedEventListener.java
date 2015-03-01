@@ -1,6 +1,7 @@
 package garyttierney.atmapp.swing.events.validation;
 
 import javax.swing.*;
+import java.awt.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
@@ -18,13 +19,17 @@ public class PinNumberChangedEventListener implements PropertyChangeListener {
         // first check if it's all digits
         if (!value.matches("[0-9]+")) {
             pinMessageLabel.setText("The account number must only contain numbers.");
+            pinMessageLabel.setForeground(Color.RED);
             return;
         }
 
         // then check if it's the correct length
-        if (value.length() != 8) {
+        if (value.length() != 4) {
             pinMessageLabel.setText("The account number must be 4 digits. E.g., 1234");
+            pinMessageLabel.setForeground(Color.RED);
             return;
         }
+
+        pinMessageLabel.setForeground(Color.BLACK);
     }
 }

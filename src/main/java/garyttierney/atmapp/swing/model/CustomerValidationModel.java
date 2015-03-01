@@ -12,6 +12,7 @@ public class CustomerValidationModel extends AbstractModel {
     }
 
     public void setAccountNumber(String accountNumber) {
+        propertyChangeDispatcher.firePropertyChange("accountNumber", this.accountNumber, accountNumber);
         this.accountNumber = accountNumber;
     }
 
@@ -20,6 +21,7 @@ public class CustomerValidationModel extends AbstractModel {
     }
 
     public void setPinNumber(String pinNumber) {
+        propertyChangeDispatcher.firePropertyChange("pinNumber", this.pinNumber, pinNumber);
         this.pinNumber = pinNumber;
     }
 
