@@ -23,8 +23,10 @@ public class ATMApplicationContext {
     public void switchTo(AbstractView view) {
         frame.setVisible(false);
         frame = new JFrame("ATM");
-        frame.add(view.createViewJPanel());
+        JPanel panel = view.createViewJPanel();
+        frame.add(panel);
         frame.pack();
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 }

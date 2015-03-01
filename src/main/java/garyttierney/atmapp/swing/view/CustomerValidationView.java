@@ -11,6 +11,7 @@ import garyttierney.atmapp.swing.util.DocumentListenerAdapter;
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.text.BadLocationException;
+import java.awt.*;
 
 public class CustomerValidationView extends AbstractView {
     private final CustomerValidationModel model = new CustomerValidationModel();
@@ -54,13 +55,14 @@ public class CustomerValidationView extends AbstractView {
         });
 
         JLabel submitOptionsLabel = new JLabel("Click the submit button to login.");
-        Action submitOptionsAction = new CustomerAuthenticationAction(null, model, context.getService(CustomerAuthenticationService.class), submitOptionsLabel);
+        Action submitOptionsAction = new CustomerAuthenticationAction(context, model, context.getService(CustomerAuthenticationService.class), submitOptionsLabel);
 
         JButton submitOptionsButton = new JButton(submitOptionsAction);
         submitOptionsButton.setText("Submit");
         submitOptionsLabel.setLabelFor(submitOptionsButton);
 
         JPanel panel = new JPanel();
+        panel.setPreferredSize(new Dimension(500, 100));
 
         GroupLayout layout = new GroupLayout(panel);
         panel.setLayout(layout);

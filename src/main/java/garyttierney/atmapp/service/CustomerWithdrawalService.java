@@ -47,7 +47,7 @@ public class CustomerWithdrawalService {
             customer.setWithdrawalLimit(customer.getWithdrawalLimit() + amount);
             customer.setBalance(customer.getBalance() + amount);
 
-            throw new CustomerWithdrawalException("An unknown error occurred while processing your withdrawal! Please try again later");
+            throw new CustomerWithdrawalException("An unknown error occurred while processing your withdrawal! Please try again later", ex);
         }
     }
 }

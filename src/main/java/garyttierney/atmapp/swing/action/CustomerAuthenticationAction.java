@@ -19,8 +19,12 @@ public class CustomerAuthenticationAction extends AbstractAction {
     private final CustomerAuthenticationService customerAuthenticationService;
     private final JLabel submitResultLabel;
 
-    public CustomerAuthenticationAction(ATMApplicationContext context, CustomerValidationModel options, CustomerAuthenticationService customerAuthenticationService,
-                                        JLabel submitResultLabel) {
+    public CustomerAuthenticationAction(
+        ATMApplicationContext context,
+        CustomerValidationModel options,
+        CustomerAuthenticationService customerAuthenticationService,
+        JLabel submitResultLabel
+    ) {
         this.context = context;
         this.options = options;
         this.customerAuthenticationService = customerAuthenticationService;
@@ -38,6 +42,7 @@ public class CustomerAuthenticationAction extends AbstractAction {
 
                 if (option == JOptionPane.YES_OPTION) {
                     context.switchTo(new SuperuserView(context));
+                    return;
                 }
 
                 // else, continue as normal
