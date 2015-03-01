@@ -31,7 +31,7 @@ public class CustomerValidationModel extends AbstractModel {
 
     public void incrementNumberOfAttempts() {
         attempts++;
-        propertyChangeDispatcher.firePropertyChange("disabled", attempts - 1, attempts);
+        propertyChangeDispatcher.firePropertyChange("numberOfAttempts", attempts - 1, attempts);
     }
 
     private int attempts = 0;

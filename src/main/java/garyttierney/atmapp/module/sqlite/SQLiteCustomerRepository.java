@@ -12,17 +12,37 @@ import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
+/**
+ * An implementation of {@link garyttierney.atmapp.database.CustomerRepository} using JDBC and a SQLite backed database.
+ */
 public class SQLiteCustomerRepository implements CustomerRepository {
     private final Connection connection;
 
+    /**
+     * Create a new SQLiteCustomerRepository and initialize the prepared statements it uses.
+     *
+     * @param connection A JDBC connection to the SQLite database.
+     * @throws SQLException Thrown if we failed to initialize the prepared statements required to function.
+     */
     public SQLiteCustomerRepository(Connection connection) throws SQLException {
         this.connection = connection;
 
         init();
     }
 
+    /**
+     * A prepared statement which finds a single customer in the database by their account and pin number.
+     */
     private PreparedStatement findStatement;
+
+    /**
+     * A prepared statement which returns a list of all customers in the database.
+     */
     private PreparedStatement listStatement;
+
+    /**
+     * A prepared statement which updates the balance and withdrawal limit of a single customer.
+     */
     private PreparedStatement updateStatement;
 
     public void init() throws SQLException {
@@ -85,7 +105,7 @@ public class SQLiteCustomerRepository implements CustomerRepository {
         Customer customer = new Customer();
         customer.setSuperuser(resultSet.getBoolean("superuser"));
         customer.setBalance(resultSet.getDouble("balance"));
-        customer.setWithdrawlLimit(resultSet.getInt("withdrawal_limit"));
+        customer.setWithdrawalLimit(resultSet.getInt("withdrawal_limit"));
         customer.setForename(resultSet.getString("forename"));
         customer.setSurname(resultSet.getString("surname"));
         customer.setAddress(resultSet.getString("address"));
