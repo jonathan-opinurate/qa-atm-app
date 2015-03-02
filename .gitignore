@@ -2,4 +2,5 @@ doc/coverage
 *.iml
 .idea
 *.sqlite*
+.superuser_lock
 target

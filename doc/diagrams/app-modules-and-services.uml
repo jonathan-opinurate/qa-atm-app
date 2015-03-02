@@ -3,62 +3,60 @@
   <ID>JAVA</ID>
   <OriginalElement>garyttierney.atmapp.database.CustomerRepository</OriginalElement>
   <nodes>
-    <node x="0.0" y="0.0">garyttierney.atmapp.service.CustomerAuthenticationException</node>
-    <node x="565.75" y="158.0">garyttierney.atmapp.module.sqlite.SQLiteDatabaseModule</node>
-    <node x="316.75" y="79.0">garyttierney.atmapp.module.memory.InMemoryCustomerRepository</node>
-    <node x="818.5" y="0.0">garyttierney.atmapp.service.CustomerWithdrawalException</node>
-    <node x="555.75" y="79.0">garyttierney.atmapp.module.sqlite.SQLiteCustomerRepository</node>
-    <node x="774.75" y="79.0">garyttierney.atmapp.service.CustomerWithdrawalService</node>
-    <node x="65.75" y="79.0">garyttierney.atmapp.service.CustomerAuthenticationService</node>
-    <node x="460.75" y="0.0">garyttierney.atmapp.database.CustomerRepository</node>
-    <node x="326.75" y="158.0">garyttierney.atmapp.module.memory.InMemoryDatabaseModule</node>
+    <node x="0.0" y="31.5">garyttierney.atmapp.service.CustomerAuthenticationException</node>
+    <node x="683.25" y="326.0">garyttierney.atmapp.module.sqlite.SQLiteDatabaseModule</node>
+    <node x="361.74999999999994" y="163.0">garyttierney.atmapp.module.memory.InMemoryCustomerRepository</node>
+    <node x="1003.25" y="31.5">garyttierney.atmapp.service.CustomerWithdrawalException</node>
+    <node x="679.75" y="142.0">garyttierney.atmapp.module.sqlite.SQLiteCustomerRepository</node>
+    <node x="898.75" y="184.0">garyttierney.atmapp.service.CustomerWithdrawalService</node>
+    <node x="50.75" y="184.0">garyttierney.atmapp.service.CustomerAuthenticationService</node>
+    <node x="495.99999999999994" y="0.0">garyttierney.atmapp.database.CustomerRepository</node>
+    <node x="411.24999999999994" y="326.0">garyttierney.atmapp.module.memory.InMemoryDatabaseModule</node>
   </nodes>
   <notes />
   <edges>
     <edge source="garyttierney.atmapp.service.CustomerAuthenticationService" target="garyttierney.atmapp.database.CustomerRepository">
-      <point x="57.75" y="-14.5" />
-      <point x="239.0" y="49.0" />
-      <point x="480.75" y="49.0" />
-      <point x="-60.0" y="14.5" />
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
     </edge>
     <edge source="garyttierney.atmapp.service.CustomerWithdrawalService" target="garyttierney.atmapp.database.CustomerRepository">
-      <point x="-51.75" y="-14.5" />
-      <point x="826.5" y="49.0" />
-      <point x="600.75" y="49.0" />
-      <point x="60.0" y="14.5" />
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
     </edge>
     <edge source="garyttierney.atmapp.service.CustomerWithdrawalService" target="garyttierney.atmapp.service.CustomerWithdrawalException">
-      <point x="51.75" y="-14.5" />
-      <point x="0.0" y="14.5" />
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
     </edge>
     <edge source="garyttierney.atmapp.module.memory.InMemoryDatabaseModule" target="garyttierney.atmapp.module.memory.InMemoryCustomerRepository">
-      <point x="0.0" y="-14.5" />
-      <point x="0.0" y="14.5" />
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
     </edge>
     <edge source="garyttierney.atmapp.module.memory.InMemoryCustomerRepository" target="garyttierney.atmapp.database.CustomerRepository">
-      <point x="0.0" y="-14.5" />
-      <point x="426.25" y="59.0" />
-      <point x="520.75" y="59.0" />
-      <point x="-20.0" y="14.5" />
+      <point x="0.0" y="-46.0" />
+      <point x="510.74999999999994" y="122.0" />
+      <point x="607.75" y="122.0" />
+      <point x="-37.25" y="46.0" />
     </edge>
     <edge source="garyttierney.atmapp.service.CustomerAuthenticationService" target="garyttierney.atmapp.service.CustomerAuthenticationException">
-      <point x="-57.75" y="-14.5" />
-      <point x="0.0" y="14.5" />
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
     </edge>
     <edge source="garyttierney.atmapp.module.sqlite.SQLiteDatabaseModule" target="garyttierney.atmapp.module.sqlite.SQLiteCustomerRepository">
-      <point x="0.0" y="-14.5" />
-      <point x="0.0" y="14.5" />
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
     </edge>
     <edge source="garyttierney.atmapp.module.sqlite.SQLiteCustomerRepository" target="garyttierney.atmapp.database.CustomerRepository">
-      <point x="0.0" y="-14.5" />
-      <point x="655.25" y="59.0" />
-      <point x="560.75" y="59.0" />
-      <point x="20.0" y="14.5" />
+      <point x="0.0" y="-67.0" />
+      <point x="779.25" y="122.0" />
+      <point x="682.25" y="122.0" />
+      <point x="37.25" y="46.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="521.0" y="93.5" />
+  <settings layout="Hierarchic Group" zoom="1.0" x="522.0" y="134.0" />
   <SelectedNodes />
-  <Categories />
+  <Categories>
+    <Category>Methods</Category>
+  </Categories>
   <SCOPE>All</SCOPE>
   <VISIBILITY>private</VISIBILITY>
 </Diagram>
