@@ -5,6 +5,7 @@ import garyttierney.atmapp.model.Customer;
 import garyttierney.atmapp.service.CustomerAuthenticationException;
 import garyttierney.atmapp.service.CustomerAuthenticationService;
 import garyttierney.atmapp.swing.model.CustomerValidationModel;
+import garyttierney.atmapp.swing.view.CustomerLockedOutView;
 import garyttierney.atmapp.swing.view.CustomerOptionsView;
 import garyttierney.atmapp.swing.view.SuperuserView;
 
@@ -12,6 +13,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
+/**
+ * This action represents a customer login request and invokes the {@link garyttierney.atmapp.service.CustomerAuthenticationService} to try
+ * and load a customer using their credentials.
+ */
 public class CustomerAuthenticationAction extends AbstractAction {
 
     private final ATMApplicationContext context;
@@ -56,7 +61,12 @@ public class CustomerAuthenticationAction extends AbstractAction {
                 // else, continue as normal
             }
 
-            context.switchTo(new CustomerOptionsView(context, customer));
+            if (!context.isLockedDown()) {
+                context.switchTo(new CustomerOptionsView(context, customer));
+            } else {
+                JOptionPane.showMessageDialog(null, "Sorry! Application is currently locked down.");
+                context.switchTo(new CustomerLockedOutView(context));
+            }
         } catch (CustomerAuthenticationException ex) {
             options.incrementNumberOfAttempts();
             submitResultLabel.setForeground(Color.RED);

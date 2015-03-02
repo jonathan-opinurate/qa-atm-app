@@ -5,9 +5,17 @@ import java.awt.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
+/**
+ * This event listener is responsible for validating the inputted account number when a change is made to the input.
+ */
 public class AccountNumberChangedEventListener implements PropertyChangeListener {
     private final JLabel accountNumberLabel;
 
+    /**
+     * Construct a new AccountNumberChangedEventListener.
+     *
+     * @param accountNumberLabel The JLabel to update with an error message if validation fails.
+     */
     public AccountNumberChangedEventListener(JLabel accountNumberLabel) {
         this.accountNumberLabel = accountNumberLabel;
     }

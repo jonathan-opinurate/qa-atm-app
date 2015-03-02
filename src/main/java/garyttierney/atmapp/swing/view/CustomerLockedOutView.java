@@ -11,7 +11,7 @@ public class CustomerLockedOutView extends AbstractView {
 
     @Override
     public JPanel createViewJPanel() {
-        JLabel label = new JLabel("Max tries exceeded!");
+        JLabel label = new JLabel("Locked out!");
 
         JPanel panel = new JPanel();
         panel.add(label);

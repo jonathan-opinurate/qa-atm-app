@@ -12,6 +12,16 @@ public class SuperuserView extends AbstractView {
 
     @Override
     public JPanel createViewJPanel() {
+        JButton resetLockdownButton = new JButton();
+        resetLockdownButton.setText("Reset lockdown");
+
+        JButton lockdownButton = new JButton();
+        lockdownButton.setText("Lockdown");
+
+        JPanel panel = new JPanel();
+        panel.add(lockdownButton);
+        panel.add(resetLockdownButton);
+
         return new JPanel();
     }
 }

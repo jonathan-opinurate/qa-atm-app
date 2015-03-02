@@ -5,9 +5,17 @@ import java.awt.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
+/**
+ * This event listener is responsible for validating the inputted pin number when a change is made to the input.
+ */
 public class PinNumberChangedEventListener implements PropertyChangeListener {
     private final JLabel pinMessageLabel;
 
+    /**
+     * Construct a new PinNumberChangedEventListener.
+     *
+     * @param pinMessageLabel The JLabel to update with an error message if validation fails.
+     */
     public PinNumberChangedEventListener(JLabel pinMessageLabel) {
         this.pinMessageLabel = pinMessageLabel;
     }

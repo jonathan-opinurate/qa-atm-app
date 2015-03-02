@@ -5,6 +5,9 @@ import garyttierney.atmapp.model.Customer;
 import java.util.Optional;
 import java.util.Set;
 
+/**
+ * This interface is responsible for managing all {@link Customer}s and loading them from the database and updates to it.
+ */
 public interface CustomerRepository {
     /**
      * Update a customers withdrawalLimit, balance and blacklist flag in the database.

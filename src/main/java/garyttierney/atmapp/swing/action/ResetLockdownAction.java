@@ -6,18 +6,18 @@ import garyttierney.atmapp.swing.view.CustomerValidationView;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 
-/**
- * This action wraps around switching from a transaction back to the login view.
- */
-public class CloseTransactionAction extends AbstractAction {
+public class ResetLockdownAction extends AbstractAction {
     private final ATMApplicationContext context;
 
-    public CloseTransactionAction(ATMApplicationContext context) {
+    public ResetLockdownAction(ATMApplicationContext context) {
         this.context = context;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        context.resetLockdown();
+
+        JOptionPane.showMessageDialog(null, "Successfully reset application lock!");
         context.switchTo(new CustomerValidationView(context));
     }
 }
