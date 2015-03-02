@@ -5,6 +5,8 @@ import garyttierney.atmapp.model.Customer;
 import garyttierney.atmapp.service.CustomerAuthenticationException;
 import garyttierney.atmapp.service.CustomerAuthenticationService;
 import garyttierney.atmapp.swing.model.CustomerValidationModel;
+import garyttierney.atmapp.swing.util.MessageDialogHelper;
+import garyttierney.atmapp.swing.util.MessageDialogHelper.MessageDialogChoice;
 import garyttierney.atmapp.swing.view.CustomerLockedOutView;
 import garyttierney.atmapp.swing.view.CustomerOptionsView;
 import garyttierney.atmapp.swing.view.SuperuserView;
@@ -23,6 +25,7 @@ public class CustomerAuthenticationAction extends AbstractAction {
     private final CustomerValidationModel options;
     private final CustomerAuthenticationService customerAuthenticationService;
     private final JLabel submitResultLabel;
+    private final MessageDialogHelper messageDialogHelper;
 
     /**
      * Create a new action which handles a user submitting an account and pin number.
@@ -36,12 +39,14 @@ public class CustomerAuthenticationAction extends AbstractAction {
         ATMApplicationContext context,
         CustomerValidationModel options,
         CustomerAuthenticationService customerAuthenticationService,
-        JLabel submitResultLabel
+        JLabel submitResultLabel,
+        MessageDialogHelper messageDialogHelper
     ) {
         this.context = context;
         this.options = options;
         this.customerAuthenticationService = customerAuthenticationService;
         this.submitResultLabel = submitResultLabel;
+        this.messageDialogHelper = messageDialogHelper;
     }
 
     @Override
@@ -49,11 +54,15 @@ public class CustomerAuthenticationAction extends AbstractAction {
         try {
             Customer customer = customerAuthenticationService.authenticate(options.getAccountNumber(), options.getPinNumber());
             if (customer.isSuperuser()) { // forward on to management view
-                Object[] options = {"Yes", "No - continue"};
-                int option = JOptionPane.showOptionDialog(null,  "Would you like to view the superuser dashboard?", "Welcome administrator!",
-                        JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[1]);
 
-                if (option == JOptionPane.YES_OPTION) {
+                MessageDialogChoice choice = messageDialogHelper.promptWithChoice(
+                    "Welcome administrator!",
+                    "Would you like to view the superuser dashboard?",
+                    "Yes", "No - continue",
+                    false
+                );
+
+                if (choice == MessageDialogChoice.YES) {
                     context.switchTo(new SuperuserView(context));
                     return;
                 }
@@ -64,7 +73,7 @@ public class CustomerAuthenticationAction extends AbstractAction {
             if (!context.isLockedDown()) {
                 context.switchTo(new CustomerOptionsView(context, customer));
             } else {
-                JOptionPane.showMessageDialog(null, "Sorry! Application is currently locked down.");
+                messageDialogHelper.prompt("Error!", "Sorry, the application is currently locked down!");
                 context.switchTo(new CustomerLockedOutView(context));
             }
         } catch (CustomerAuthenticationException ex) {

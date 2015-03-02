@@ -12,7 +12,6 @@ import java.sql.DriverManager;
 
 public class SQLiteCustomerRepositoryTest extends CustomerRepositoryTest {
 
-
     @Test
     public void testUpdateCustomer() throws Exception {
         super.testUpdateCustomer();

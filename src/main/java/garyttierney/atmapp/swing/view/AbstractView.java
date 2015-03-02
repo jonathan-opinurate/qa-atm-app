@@ -11,5 +11,7 @@ public abstract class AbstractView {
         this.context = context;
     }
 
+    // @todo - i could invert control here and change the method signature from JPanel createViewJPanel to void bindTo(JPanel), this would
+    // allow for functional testing of views.
     public abstract JPanel createViewJPanel();
 }

@@ -31,6 +31,8 @@ public class ATMApplicationContext {
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+        frame.requestFocus();
+        frame.toFront();
         frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
     }
 

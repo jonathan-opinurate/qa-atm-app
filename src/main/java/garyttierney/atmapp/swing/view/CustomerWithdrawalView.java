@@ -6,7 +6,9 @@ import garyttierney.atmapp.service.CustomerWithdrawalService;
 import garyttierney.atmapp.swing.action.CustomerWithdrawalAction;
 import garyttierney.atmapp.swing.events.withdrawal.WithdrawalAmountChangedEventListener;
 import garyttierney.atmapp.swing.model.CustomerWithdrawalModel;
+import garyttierney.atmapp.swing.util.DefaultSwingMessageDialogHelper;
 import garyttierney.atmapp.swing.util.DocumentListenerAdapter;
+import garyttierney.atmapp.swing.util.MessageDialogHelper;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
@@ -62,7 +64,11 @@ public class CustomerWithdrawalView extends AbstractView {
             }
         });
 
-        JButton submitWithdrawalButton = new JButton(new CustomerWithdrawalAction(context, model, context.getService(CustomerWithdrawalService.class)));
+        MessageDialogHelper messageDialogHelper = new DefaultSwingMessageDialogHelper();
+
+        JButton submitWithdrawalButton = new JButton(
+            new CustomerWithdrawalAction(context, model, context.getService(CustomerWithdrawalService.class), messageDialogHelper)
+        );
         submitWithdrawalButton.setText("Make withdrawal");
 
         JPanel panel = new JPanel();

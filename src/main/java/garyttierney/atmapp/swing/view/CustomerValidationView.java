@@ -7,7 +7,9 @@ import garyttierney.atmapp.swing.events.validation.AccountNumberChangedEventList
 import garyttierney.atmapp.swing.events.validation.FailedAuthenticationEventListener;
 import garyttierney.atmapp.swing.events.validation.PinNumberChangedEventListener;
 import garyttierney.atmapp.swing.model.CustomerValidationModel;
+import garyttierney.atmapp.swing.util.DefaultSwingMessageDialogHelper;
 import garyttierney.atmapp.swing.util.DocumentListenerAdapter;
+import garyttierney.atmapp.swing.util.MessageDialogHelper;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
@@ -54,8 +56,11 @@ public class CustomerValidationView extends AbstractView {
             }
         });
 
+        MessageDialogHelper messageDialogHelper = new DefaultSwingMessageDialogHelper();
         JLabel submitOptionsLabel = new JLabel("Click the submit button to login.");
-        Action submitOptionsAction = new CustomerAuthenticationAction(context, model, context.getService(CustomerAuthenticationService.class), submitOptionsLabel);
+        Action submitOptionsAction = new CustomerAuthenticationAction(
+            context, model, context.getService(CustomerAuthenticationService.class), submitOptionsLabel, messageDialogHelper
+        );
 
         JButton submitOptionsButton = new JButton(submitOptionsAction);
         submitOptionsButton.setText("Submit");
