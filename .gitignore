@@ -1,0 +1,5 @@
+doc/coverage
+*.iml
+.idea
+*.sqlite*
+target

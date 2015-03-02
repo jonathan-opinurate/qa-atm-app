@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>garyttierney.atmapp.swing.view.CustomerBalanceView</OriginalElement>
+  <nodes>
+    <node x="3.75" y="158.0">garyttierney.atmapp.swing.action.CloseTransactionAndPrintReceiptAction</node>
+    <node x="0.0" y="79.0">garyttierney.atmapp.swing.util.JTextAreaPrintable</node>
+    <node x="257.25" y="79.0">garyttierney.atmapp.swing.view.CustomerValidationView</node>
+    <node x="309.25" y="237.0">garyttierney.atmapp.swing.view.CustomerBalanceView</node>
+    <node x="304.75" y="158.0">garyttierney.atmapp.swing.action.CloseTransactionAction</node>
+    <node x="" y="">garyttierney.atmapp.swing.view.AbstractView</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="garyttierney.atmapp.swing.view.CustomerBalanceView" target="garyttierney.atmapp.swing.action.CloseTransactionAction">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="garyttierney.atmapp.swing.action.CloseTransactionAction" target="garyttierney.atmapp.swing.view.CustomerValidationView">
+      <point x="0.0" y="-14.5" />
+      <point x="46.0" y="14.5" />
+    </edge>
+    <edge source="garyttierney.atmapp.swing.view.CustomerBalanceView" target="garyttierney.atmapp.swing.view.AbstractView">
+      <point x="57.333333333333314" y="-14.5" />
+      <point x="452.5833333333333" y="212.0" />
+      <point x="496.25" y="212.0" />
+      <point x="496.25" y="54.0" />
+      <point x="460.875" y="54.0" />
+      <point x="28.75" y="14.5" />
+    </edge>
+    <edge source="garyttierney.atmapp.swing.view.CustomerBalanceView" target="garyttierney.atmapp.swing.action.CloseTransactionAndPrintReceiptAction">
+      <point x="-57.33333333333334" y="-14.5" />
+      <point x="337.91666666666663" y="212.0" />
+      <point x="144.25" y="212.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="garyttierney.atmapp.swing.view.CustomerValidationView" target="garyttierney.atmapp.swing.view.AbstractView">
+      <point x="0.0" y="-14.5" />
+      <point x="349.25" y="54.0" />
+      <point x="403.375" y="54.0" />
+      <point x="-28.75" y="14.5" />
+    </edge>
+    <edge source="garyttierney.atmapp.swing.action.CloseTransactionAndPrintReceiptAction" target="garyttierney.atmapp.swing.view.CustomerValidationView">
+      <point x="70.25" y="-14.5" />
+      <point x="214.5" y="133.0" />
+      <point x="303.25" y="133.0" />
+      <point x="-46.0" y="14.5" />
+    </edge>
+    <edge source="garyttierney.atmapp.swing.action.CloseTransactionAndPrintReceiptAction" target="garyttierney.atmapp.swing.util.JTextAreaPrintable">
+      <point x="-70.25" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="248.5" y="133.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

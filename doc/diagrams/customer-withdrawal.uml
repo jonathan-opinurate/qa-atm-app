@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>garyttierney.atmapp.swing.view.CustomerWithdrawalView</OriginalElement>
+  <nodes>
+    <node x="94.52272727272725" y="79.0">garyttierney.atmapp.swing.action.CloseTransactionAndPrintReceiptAction</node>
+    <node x="495.75" y="158.0">garyttierney.atmapp.swing.model.CustomerWithdrawalModel</node>
+    <node x="0.0" y="237.0">garyttierney.atmapp.swing.events.withdrawal.WithdrawalAmountChangedEventListener</node>
+    <node x="90.77272727272725" y="21.0">garyttierney.atmapp.swing.util.JTextAreaPrintable</node>
+    <node x="311.00000000000006" y="237.0">garyttierney.atmapp.swing.action.CustomerWithdrawalAction</node>
+    <node x="246.75" y="158.0">garyttierney.atmapp.swing.view.CustomerWithdrawalResultView</node>
+    <node x="348.02272727272714" y="0.0">garyttierney.atmapp.swing.view.CustomerValidationView</node>
+    <node x="389.3977272727273" y="316.0">garyttierney.atmapp.swing.view.CustomerWithdrawalView</node>
+    <node x="395.52272727272725" y="79.0">garyttierney.atmapp.swing.action.CloseTransactionAction</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="garyttierney.atmapp.swing.view.CustomerWithdrawalResultView" target="garyttierney.atmapp.swing.action.CloseTransactionAction">
+      <point x="57.25" y="-14.5" />
+      <point x="418.5" y="133.0" />
+      <point x="486.02272727272725" y="133.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="garyttierney.atmapp.swing.view.CustomerWithdrawalView" target="garyttierney.atmapp.swing.action.CustomerWithdrawalAction">
+      <point x="-23.750000000000057" y="-14.5" />
+      <point x="460.64772727272725" y="286.0" />
+      <point x="411.50000000000006" y="286.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="garyttierney.atmapp.swing.view.CustomerWithdrawalView" target="garyttierney.atmapp.swing.model.CustomerWithdrawalModel">
+      <point x="23.749999999999943" y="-14.5" />
+      <point x="508.14772727272725" y="286.0" />
+      <point x="604.4545454545455" y="286.0" />
+      <point x="604.4545454545455" y="212.0" />
+      <point x="595.25" y="212.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="garyttierney.atmapp.swing.action.CloseTransactionAction" target="garyttierney.atmapp.swing.view.CustomerValidationView">
+      <point x="-5.6843418860808015E-14" y="-14.5" />
+      <point x="46.0" y="14.5" />
+    </edge>
+    <edge source="garyttierney.atmapp.swing.view.CustomerWithdrawalView" target="garyttierney.atmapp.swing.events.withdrawal.WithdrawalAmountChangedEventListener">
+      <point x="-71.25000000000006" y="-14.5" />
+      <point x="413.14772727272725" y="296.0" />
+      <point x="145.5" y="296.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="garyttierney.atmapp.swing.action.CloseTransactionAndPrintReceiptAction" target="garyttierney.atmapp.swing.view.CustomerValidationView">
+      <point x="70.25" y="-14.5" />
+      <point x="305.27272727272725" y="54.0" />
+      <point x="394.02272727272714" y="54.0" />
+      <point x="-46.0" y="14.5" />
+    </edge>
+    <edge source="garyttierney.atmapp.swing.action.CustomerWithdrawalAction" target="garyttierney.atmapp.swing.model.CustomerWithdrawalModel">
+      <point x="50.24999999999994" y="-14.5" />
+      <point x="461.75" y="212.0" />
+      <point x="528.9166666666666" y="212.0" />
+      <point x="-66.33333333333337" y="14.5" />
+    </edge>
+    <edge source="garyttierney.atmapp.swing.action.CustomerWithdrawalAction" target="garyttierney.atmapp.swing.view.CustomerWithdrawalResultView">
+      <point x="-50.25000000000006" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="garyttierney.atmapp.swing.view.CustomerWithdrawalResultView" target="garyttierney.atmapp.swing.action.CloseTransactionAndPrintReceiptAction">
+      <point x="-57.25" y="-14.5" />
+      <point x="304.0" y="133.0" />
+      <point x="235.02272727272725" y="133.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="garyttierney.atmapp.swing.action.CloseTransactionAndPrintReceiptAction" target="garyttierney.atmapp.swing.util.JTextAreaPrintable">
+      <point x="-70.25" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="347.5" y="172.5" />
+  <SelectedNodes>
+    <node>garyttierney.atmapp.swing.util.JTextAreaPrintable</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
