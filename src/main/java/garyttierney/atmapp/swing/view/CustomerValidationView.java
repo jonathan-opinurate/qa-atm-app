@@ -25,13 +25,13 @@ public class CustomerValidationView extends AbstractView {
 
     @Override
     public JPanel createViewJPanel() {
-        JLabel accountNumberLabel = new JLabel("Please enter your 8 digit account number here");
+        JLabel accountNumberLabel = new JLabel("Please enter your 6 digit account number here");
         JLabel pinNumberLabel = new JLabel("Please enter your 4 digit pin number here");
 
         model.addPropertyChangeListener("accountNumber", new AccountNumberChangedEventListener(accountNumberLabel));
         model.addPropertyChangeListener("pinNumber", new PinNumberChangedEventListener(pinNumberLabel));
         model.addPropertyChangeListener("numberOfAttempts", new FailedAuthenticationEventListener(context, 3));
-        JPasswordField accountNumberField = new JPasswordField(8);
+        JPasswordField accountNumberField = new JPasswordField(6);
         JPasswordField pinNumberField = new JPasswordField(4);
 
         accountNumberField.getDocument().addDocumentListener(new DocumentListenerAdapter() {

@@ -4,6 +4,14 @@
 
 * Java 8
 
+# Purpose
+
+This program provides an implementation of a cash machine simulator. It allows the user to login with their account number (pseudo-card) and pin number, and select
+the option to make a withdrawal or get a balance. When the user makes an option, they are allowed to print the transaction using the default printing device.
+
+
+#Instructions
+
 ## Logging in
 
 Upon starting the application, you will be presented with the following view:
@@ -50,3 +58,24 @@ If at any point during the balance should an unknown error occur your balance wi
 
 ![Withdrawal result]
 (http://i.imgur.com/klThE4R.png)
+
+Once you have finished you can click the Close button to return to the ATM main menu.
+
+## Get a balance
+
+If you selected the Balance option, you will be presented with a similar screen to the withdrawal system giving you a receipt and the chance to go back to the login page.
+
+![Get a balance]
+(http://i.imgur.com/24OYnCf.png)
+
+## Superuser view
+
+If you logged in as a superuser you will be given the chance to go to the superuser dashboard or continue to the customer options menu:
+
+![Welcome administrator]
+(http://i.imgur.com/y7Vfcu4.png)
+
+If you opt to go to the superuser view then you will be presented with the option to lockdown or reset the lock on the application.
+
+![Set or reset lock]
+(http://i.imgur.com/vmuwFDd.png)
