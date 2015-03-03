@@ -2,8 +2,15 @@
 
 ## Requirements
 
-JDK 8
-Maven >= 2
+* JDK 8
+* Maven
+
+## Dependencies
+
+* SQLite JDBC Driver
+* Google Guice
+* JUnit 4 (testing)
+* Mockito (testing)
 
 ## General notes
 
@@ -100,4 +107,4 @@ dsn=jdbc:sqlite:database.sqlite
 To run the application with the SQLite driver, you should execute it with the following arguments:
 ```
 java --jar target/atm-app-*.jar --sqlite <path-to-config>
-``
+```
