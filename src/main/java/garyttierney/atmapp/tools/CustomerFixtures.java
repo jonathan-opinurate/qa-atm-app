@@ -6,6 +6,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class CustomerFixtures {
+    private CustomerFixtures() {}
+
     public static final Set<Customer> FIXTURES = new HashSet<>();
 
     static {
