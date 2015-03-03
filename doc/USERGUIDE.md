@@ -9,6 +9,10 @@
 This program provides an implementation of a cash machine simulator. It allows the user to login with their account number (pseudo-card) and pin number, and select
 the option to make a withdrawal or get a balance. When the user makes an option, they are allowed to print the transaction using the default printing device.
 
+It also allows a superuser to login with the special account number and pin 999999 and 1234 to lockdown or unlock the application from any customer interaction.
+
+The default set of credentials is hardcoded into CustomerFixtures but when used with the SQLite database driver it is possible to define new customers and superusers
+as long as a unique account number is chosen.
 
 #Instructions
 
