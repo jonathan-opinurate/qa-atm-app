@@ -12,6 +12,10 @@
 * JUnit 4 (testing)
 * Mockito (testing)
 
+## Design
+
+A mock flow illustration is in doc/diagrams/ made up of each step in the application with a separate diagram which describes the modular CustomerRepository implementation.
+
 ## General notes
 
 This application is setup in a way that allows you to easily override the default withdrawal and authentication mechanisms. A `Module` is able

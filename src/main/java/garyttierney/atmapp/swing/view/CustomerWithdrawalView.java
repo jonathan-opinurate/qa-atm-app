@@ -37,6 +37,7 @@ public class CustomerWithdrawalView extends AbstractView {
         JLabel amountLabel = new JLabel("Amount: ...");
         model.addPropertyChangeListener("amount", new WithdrawalAmountChangedEventListener(model.getCustomer(), amountLabel));
 
+        // user help
         JLabel arbitraryAmountLabel = new JLabel("Enter amount");
         JTextField arbitraryAmountInput = new JTextField("10");
         arbitraryAmountLabel.setLabelFor(arbitraryAmountInput);
@@ -48,7 +49,7 @@ public class CustomerWithdrawalView extends AbstractView {
                     String text = event.getDocument().getText(0, event.getDocument().getLength());
 
                     if (!text.matches("[1-9][0-9]+") || text.isEmpty()) {
-                        amountLabel.setText("Invalid value.");
+                        amountLabel.setText("Invalid value."); // user help
                         return;
                     }
 
@@ -56,7 +57,7 @@ public class CustomerWithdrawalView extends AbstractView {
                     if ((amount % 10) == 0) {
                         model.setAmount(amount);
                     } else {
-                        amountLabel.setText("Expected a multiple of 10");
+                        amountLabel.setText("Expected a multiple of 10"); // user help
                     }
                 } catch (BadLocationException e) {
                     e.printStackTrace();

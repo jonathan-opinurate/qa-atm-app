@@ -34,6 +34,7 @@ public class CustomerOptionsView extends AbstractView {
         JButton viewBalanceButton = new JButton(new SwitchToCustomerBalanceAction(context, model));
         viewBalanceButton.setText("View balance");
 
+        // user help
         JLabel infoLabel = new JLabel("Select an option to continue");
 
         JCheckBox printCheckBox = new JCheckBox();

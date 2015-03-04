@@ -26,14 +26,14 @@ public class AccountNumberChangedEventListener implements PropertyChangeListener
 
         // first check if it's all digits
         if (!value.matches("[0-9]+")) {
-            accountNumberLabel.setText("The account number must only contain numbers.");
+            accountNumberLabel.setText("The account number must only contain numbers."); // user help
             accountNumberLabel.setForeground(Color.RED);
             return;
         }
 
         // then check if it's the correct length
         if (value.length() != 6) {
-            accountNumberLabel.setText("The account number must be 6 digits. E.g., 000100");
+            accountNumberLabel.setText("The account number must be 6 digits. E.g., 000100"); // user help
             accountNumberLabel.setForeground(Color.RED);
             return;
         }

@@ -55,6 +55,7 @@ public class CustomerAuthenticationAction extends AbstractAction {
             Customer customer = customerAuthenticationService.authenticate(options.getAccountNumber(), options.getPinNumber());
             if (customer.isSuperuser()) { // forward on to management view
 
+                // user help
                 MessageDialogChoice choice = messageDialogHelper.promptWithChoice(
                     "Welcome administrator!",
                     "Would you like to view the superuser dashboard?",
@@ -73,6 +74,7 @@ public class CustomerAuthenticationAction extends AbstractAction {
             if (!context.isLockedDown()) {
                 context.switchTo(new CustomerOptionsView(context, customer));
             } else {
+                // user help
                 messageDialogHelper.prompt("Error!", "Sorry, the application is currently locked down!");
                 context.switchTo(new CustomerLockedOutView(context));
             }
